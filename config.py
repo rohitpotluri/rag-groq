@@ -1,7 +1,9 @@
-# configuration settings and environment variables
+"""
+Configuration settings and environment variables for the project.
+Loads API keys from a .env file and raises an error if any key is missing.
+"""
 import os
 from dotenv import load_dotenv
-
 
 load_dotenv()
 
