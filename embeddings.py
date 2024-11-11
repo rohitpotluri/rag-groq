@@ -1,3 +1,7 @@
+"""
+Collect data from pdfs online on the below topics and create embeddings using GoogleGenerativeAIEmbeddings.
+Store the embeddings in FAISS vectorstores
+"""
 # The data:
 # Occupation, Earnings, and Job Characteristics: July 2022
 # Household Income in States andMetropolitan Areas: 2022
@@ -6,13 +10,18 @@
 
 # Download documents from U.S. Census Bureau to local directory.
 
+# Standard library imports
+import os
 from urllib.request import urlretrieve
+
+# Third-party library imports from langchain and langchain_community
 from langchain_community.document_loaders import PyPDFDirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import FAISS
+
+# Project-specific imports (if applicable)
 from config import GOOGLE_API
-import os
 
 os.makedirs("us_census", exist_ok=True)
 files = [
