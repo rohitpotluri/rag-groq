@@ -1,5 +1,6 @@
 """
-Collect data from pdfs online on the below topics and create embeddings using GoogleGenerativeAIEmbeddings.
+Collect data from pdfs online on the below topics and 
+create embeddings using GoogleGenerativeAIEmbeddings.
 Store the embeddings in FAISS vectorstores
 """
 # The data:
@@ -16,9 +17,10 @@ from urllib.request import urlretrieve
 
 # Third-party library imports from langchain and langchain_community
 from langchain_community.document_loaders import PyPDFDirectoryLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import FAISS
+
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 # Project-specific imports (if applicable)
 from config import GOOGLE_API
