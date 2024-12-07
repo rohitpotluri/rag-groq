@@ -1,6 +1,6 @@
 **rag-groq**
 
-Retrieval Augmented Generation implemented using Groq APIs, GoogleGenAIEmbeddings, FAISS, LangChain
+Retrieval Augmented Generation implemented using Groq APIs, GoogleGenAIEmbeddings, FAISS, LangChain, gemma 7b instruct model
 
 **Create the Conda environment with Python 3.12**:
    ```bash
@@ -15,4 +15,8 @@ Retrieval Augmented Generation implemented using Groq APIs, GoogleGenAIEmbedding
 **Install dependencies from `requirements.txt`**:
    ```bash
    pip install -r requirements.txt
+   ```
+**Run the app**:
+   ```bash
+   streamlit run app.py
    ```
