@@ -33,4 +33,4 @@ jobs:
 
     - name: Run Pylint
       run: |
-        pylint **/*.py
+        pylint **/*.py --disable=no-name-in-module

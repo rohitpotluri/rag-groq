@@ -14,7 +14,7 @@ st.title("Document Q&A with GROQ and Google Embeddings")
 
 llm = ChatGroq(groq_api_key=GROQ_API, model_name="gemma-7b-it")
 
-user_query = st.text_input("Enter your question based on the documents:")
+user_query = st.text_input("Enter your question based on the documentation:")
 
 if st.button("Generate Embeddings"):
     st.write("Embeddings are ready and stored in the vector database!")
