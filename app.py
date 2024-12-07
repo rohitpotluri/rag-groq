@@ -1,11 +1,14 @@
+"""
+Main application for Document Q&A with GROQ and Google Embeddings
+"""
+import time
 import streamlit as st
-from langchain.chains import create_retrieval_chain
+from langchain_groq import ChatGroq
 from langchain.chains.combine_documents import create_stuff_documents_chain
+from langchain.chains import create_retrieval_chain
 from config import GROQ_API
 from embeddings import vectorstore
-from langchain_groq import ChatGroq
 from prompt import get_prompt_template
-import time
 
 st.title("Document Q&A with GROQ and Google Embeddings")
 
