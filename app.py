@@ -10,7 +10,7 @@ from config import GROQ_API
 from prompt import get_prompt_template
 from embeddings import generate_embeddings
 
-st.title("Document Q&A with GROQ and Google Embeddings")
+st.title("Document Q&A with GROQ API and Hybrid Search")
 
 llm = ChatGroq(groq_api_key=GROQ_API, model_name="gemma2-9b-it")
 
