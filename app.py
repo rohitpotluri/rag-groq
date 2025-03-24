@@ -37,6 +37,7 @@ if st.button("Generate Embeddings"):
 
 # Hybrid retrieval function
 def hybrid_retrieval(query, vectorstore, raw_docs, top_k=4):
+    """Combine vector similarity and keyword matching to retrieve relevant documents."""
     # Cosine similarity search
     vector_results = vectorstore.similarity_search(query, k=top_k)
 
@@ -58,10 +59,8 @@ if submitted:
 
         with st.spinner("Retrieving and processing your query..."):
             start_time = time.process_time()
-            
             combined_docs = hybrid_retrieval(user_query, st.session_state.vectorstore, st.session_state.raw_docs)
-            response = document_chain.invoke({'context': combined_docs, 'input': user_query})
-            
+            response = document_chain.invoke({'context': combined_docs, 'input': user_query})           
             end_time = time.process_time() - start_time
 
             st.subheader("Answer:")
@@ -73,8 +72,7 @@ if submitted:
             with st.expander("Relevant Document Chunks"):
                 for i, doc in enumerate(combined_docs):
                     st.write(f"Chunk {i + 1}: {doc.page_content}")
-                    st.write("---")
-        
+                    st.write("---")       
         st.info("Hybrid search: 50% vector similarity + 50% keyword matching.")
     else:
         st.error("Please upload a file and generate embeddings before querying.")
